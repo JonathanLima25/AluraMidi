@@ -1,6 +1,9 @@
-function tocaSomPom() {
-    document.querySelector('#som_tecla_pom').play();
+function tocaSom(idElementAudio) {
+    document.querySelector(idElementAudio).play();
 }
 
-document.querySelector('.tecla_pom').onclick=tocaSomPom;
+const listaDeTeclas = document.querySelectorAll('.tecla');
 
+listaDeTeclas.forEach(i => i.onclick=function(){
+    tocaSom(`#som_${i.classList[1]}`)
+})
